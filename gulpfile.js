@@ -1,7 +1,9 @@
-function simpleTask() {
+function simpleTask(cb) {
     console.log('This is a test task!');
+    cb();
   }
   exports.default = simpleTask
+
   
 const { src, dest, watch, series } = require("gulp");
 const concat = require("gulp-concat");
@@ -10,7 +12,7 @@ const autoprefixer = require("gulp-autoprefixer");
 const rename = require("gulp-rename");
 const cssnano = require("gulp-cssnano");
 const uglify = require("gulp-uglify");
-const imagemin = import('gulp-imagemin');
+const imagemin = require('gulp-imagemin');
 
 
 
