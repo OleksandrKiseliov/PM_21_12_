@@ -2,7 +2,7 @@ function simpleTask(cb) {
     console.log('This is a test task!');
     cb();
   }
-  exports.default = simpleTask
+  //exports.default = simpleTask
 
   
 const { src, dest, watch, series } = require("gulp");
@@ -70,6 +70,6 @@ function task_watch() {
 exports.watch = task_watch
 
 //запуск тасків за замовчуванням
-// exports.build = build;
-// exports.default = series(task_html,task_sass,task_scripts,task_imgs,
-//   task_watch); // GULPFILE
+exports.build = build;
+exports.default = series(task_html,task_sass,task_scripts,task_imgs,
+  task_watch); // GULPFILE
