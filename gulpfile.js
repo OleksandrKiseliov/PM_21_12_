@@ -1,8 +1,8 @@
-function simpleTask(cb) {
-    console.log('This is a test task!');
-    cb();
-  }
-  //exports.default = simpleTask
+// function simpleTask(cb) {
+//     console.log('This is a test task!');
+//     cb();
+//   }
+//   exports.default = simpleTask
 
   
 const { src, dest, watch, series } = require("gulp");
@@ -18,7 +18,7 @@ const imagemin = require('gulp-imagemin');
 
 //копіювання HTML файлів в папку dist
 function task_html () {
-  return src("app/*.html")
+  return src("app/html/*.html")
   .pipe(dest("dist"));
 }
 exports.html = task_html
@@ -29,7 +29,6 @@ function task_sass() {
   .pipe(concat('styles.sass'))
   .pipe(sass())
   .pipe(autoprefixer ({
-    browsers: ['last 2 versions'],
     cascade: false
   }))
   .pipe(cssnano())
@@ -62,7 +61,7 @@ exports.imgs = task_imgs
 
 //відстежування за змінами у файлах
 function task_watch() {
-  watch("app/*.html",task_html);
+  watch("app/html/*.html",task_html);
   watch("app/js/*.js",task_scripts);
   watch("app/sass/*.sass",task_sass);
   watch("app/images/*.+(jpg|jpeg|png|gif)",task_imgs);
@@ -70,6 +69,5 @@ function task_watch() {
 exports.watch = task_watch
 
 //запуск тасків за замовчуванням
-exports.build = build;
-exports.default = series(task_html,task_sass,task_scripts,task_imgs,
-  task_watch); // GULPFILE
+//exports.build = build;
+exports.default = series(task_html,task_sass,task_scripts,task_imgs,task_watch); // GULPFILE
