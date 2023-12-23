@@ -1,0 +1,20 @@
+{
+    "labels": ["0", "", "", "", "01-11-14", "", "", "", "01-12-14"],
+    "datasets": [
+      {
+        "label": "New",
+        "backgroundColor": "#34495e",
+        "borderColor": "rgba(75,192,192,1)",
+        "borderWidth": 0,
+        "data": [39, 70, 90, 70, 85, 80, 90, 85, 70]
+      },
+      {
+        "label": "Sales",
+        "backgroundColor": "#1efe00",
+        "borderColor": "rgba(75,192,192,1)",
+        "borderWidth": 0,
+        "data": [62, 50, 62, 85, 62, 31, 93, 62, 80]
+      }
+    ]
+  }
+  

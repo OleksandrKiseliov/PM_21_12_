@@ -72,8 +72,14 @@ function task_watch() {
   watch("app/scss/*.scss", task_sass);
   watch("app/img/*.+(jpg|jpeg|png|gif|svg)", task_imgs);
 }
+function task_copy_images() {
+  return src("app/img/.")
+    .pipe(dest("dist/images"));
+}
+exports.copy_images = task_copy_images;
+
 
 exports.watch = task_watch;
 
 // Default task to run all tasks
-exports.default = series(task_html, task_sass, task_scripts, task_imgs, task_watch);
+exports.default = series(task_html, task_sass, task_scripts, task_imgs, task_watch,task_copy_images);
